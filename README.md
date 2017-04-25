@@ -1,9 +1,9 @@
 # Space_Renegades
-An A.I. driven toolkit for anomaly detection and classification for general purpose space missions.
+An A.I. driven toolkit for anomaly detection and identifying potential points of system malfunction for general purpose space mission analysis.
 
 ## Purpose
 
-This project is intended to provide a modeling language for abstracting the critical components of a spacecraft and generating possibie failure modes for a given anomaly during its mission span. 
+This project is intended to provide a modeling language for abstracting a spacecraft's system architecture and mission profile for generating possibie sequence of events at risk of system malfunction and improving anomaly detection. 
 
 ## Application
-A tool for mission design engineers to formulate mitigation plans in the event such anomalies are detected and identified as a possible failure mode
+A tool for mission design engineers to formulate mitigation plans in the event such failures and identifying the probability of an anomaly as a possible failure mode.

@@ -1,5 +1,5 @@
 # Space_Renegades
-An A.I. driven toolkit for anomaly detection and identifying potential points of system malfunction for general purpose space mission analysis and design.
+An A.I. assisted toolkit for anomaly detection and identifying potential points of system malfunction for general purpose space mission analysis and design.
 
 ## Purpose
 

@@ -80,12 +80,20 @@ class Trajectory_browser:
         self.session.visit(self._url + search_string)
     
     def download_csv(self, **kwargs):
+        '''Save the csv from a query to self.csv.
+        
+        This method calls Trajectory_browser().search(**kwargs) and then saves 
+        the trajectory data to Trajectory_browser().csv.
+        
+        See Trajectory_browser().search() for valid search parameters.
+        '''
         self.search(**kwargs)
         self.session.at_xpath('/html/body/div[2]/button').click()
-        time.sleep(2)
+        time.sleep(2)  # sleep to allow javascript to parse data
         self.csv = StringIO(self.session.body())
         
     def get_DataFrame(self):
+        '''Return pandas DataFrame for self.csv.'''
         if self.csv is not None:
             df = pd.read_csv(self.csv)
             df = df.iloc[:, :-1]

@@ -89,8 +89,17 @@ class Trajectory_browser:
         '''
         self.search(**kwargs)
         self.session.at_xpath('/html/body/div[2]/button').click()
-        time.sleep(2)  # sleep to allow javascript to parse data
-        self.csv = StringIO(self.session.body())
+        timeout = 10
+        attempt = 0
+        sleep_time = 0.01
+        while self.session.body().startswith('<!DOCTYPE html>'):
+            time.sleep(sleep_time)
+            attempt += sleep_time
+            if attempt >= timeout:
+                self.csv = None
+                break
+        else:   
+            self.csv = StringIO(self.session.body())
         
     def get_DataFrame(self):
         '''Return pandas DataFrame for self.csv.'''
